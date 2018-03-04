@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app'>
 
 <head>
     <meta charset="utf-8" />
-    <script src="script/jquery-3.2.1.min.js"></script>
-    <link href="style/style.css">
-</head>
-
-<body>
-
-
+    <script src="script/angular.min.js"></script>
+    <script src="script/ngDialog.min.js"></script>
     <script src="script/script.js"></script>
+    <script src="script/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body ng-controller="myCtrl">
+<header-block></header-block>
+<body-block></body-block>
+<footer-block></footer-block>
 </body>
-
 </html>
+

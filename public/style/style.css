@@ -1,0 +1,74 @@
+html,
+body {
+    min-width: 1122px;
+    min-height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    min-height: 70px;
+}
+
+/*Навігація*/
+.main-header {
+    margin-bottom: 40px;
+}
+
+.menu-container {
+    width: 100%;
+    min-height: 70px;
+    float: left;
+}
+
+.navigation {
+    margin: 0;
+    float: left;
+    width: 800px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #C9C699;
+}
+
+.title {
+    width: 85px;
+    display: inline-block;
+}
+
+.navigation span {
+    font-size: 40px;
+    font-weight: 800;
+    margin-right: 35px;
+}
+
+.navigation ul {
+    width: 695px;
+}
+
+.navigation ul li {
+    display: inline-block;
+}
+
+.navigation a {
+    margin: 0 20px;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #C9C699;
+}
+
+.navigation a:hover {
+    border-bottom: 3px solid #C9C699;
+}
+
+/*тіло*/
+
+.content-block {
+    padding-left: 40px;
+}
+
+.content-table input {
+    width: 100px;
+}
