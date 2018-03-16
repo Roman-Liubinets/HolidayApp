@@ -171,10 +171,12 @@ body {
 
 /*тіло*/
 
+
 .content-block {
     padding-left: 40px;
 }
 
+/*таблиця*/
 .content-table table {
     width: 700px;
     min-height: 50px;
@@ -187,6 +189,7 @@ body {
     padding-bottom: 10px;
     background-color: #006400;
     color: white;
+    
 }
 
 .content-table th a {

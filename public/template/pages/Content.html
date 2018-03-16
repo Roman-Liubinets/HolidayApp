@@ -4,43 +4,13 @@
             <tr>
                 <th><a href="">Visited</a></th>
                 <th><a href="">Temperature</a></th>
-                <th><a href="">Going to visit</a></th>
+                <th><a href="">Weather condition</a></th>
                 <th>Add/Delete place</th>
             </tr>
-            <tr>
-                <td>Tirana</td>
-                <td>-23</td>
-                <td>Smooth</td>
-                <td><input type="button" value="..."></td>
-            </tr>
-            <tr>
-                <td>Andorra la Vella</td>
-                <td>-13</td>
-                <td>Smooth</td>
-                <td><input type="button" value="..."></td>
-            </tr>
-            <tr>
-                <td>Yerevan</td>
-                <td>-25</td>
-                <td>Smooth</td>
-                <td><input type="button" value="..."></td>
-            </tr>
-            <tr>
-                <td>Vienna</td>
-                <td>-3</td>
-                <td>Smooth</td>
-                <td><input type="button" value="..."></td>
-            </tr>
-            <tr>
-                <td>Baku</td>
-                <td>-18</td>
-                <td>Smooth</td>
-                <td><input type="button" value="..."></td>
-            </tr>
-            <tr>
-                <td>Minsk</td>
-                <td>-14</td>
-                <td>Smooth</td>
+            <tr ng-repeat="btn in tableWeatherContainer">
+                <td>{{btn.name}}</td>
+                <td>{{btn.temperature}}</td>
+                <td>{{btn.condition}}</td>
                 <td><input type="button" value="..."></td>
             </tr>
         </table>
