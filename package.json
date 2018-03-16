@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-openweathermap-api-factory": "^0.6.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.1",

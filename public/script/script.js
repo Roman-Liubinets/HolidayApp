@@ -40,7 +40,7 @@ app.directive("contentBlock", function () {
                 $scope.sortType = "temperature";
                 $scope.sortReverse = !$scope.sortReverse
             }
-            
+
             $scope.addDeleteModal = function () {
                 ngDialog.open({
                     template: '/template/modal/addDelete.html',
@@ -72,7 +72,7 @@ app.directive("contentBlock", function () {
                 name: "Minsk",
                 temperature: -14,
                 condition: "Smooth"
-            }]
+            }];
         }
     }
 });
