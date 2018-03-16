@@ -34,29 +34,32 @@ app.directive("contentBlock", function () {
         replace: true,
         templateUrl: "template/pages/Content.html",
         controller: function ($scope, $http, ngDialog) {
+            $scope.sortType = "temperature";
+            $scope.sortReverse = false;
+
             $scope.tableWeatherContainer = [{
                 name: "Tirana",
-                temperature: "-23",
+                temperature: -23,
                 condition: "Smooth"
             }, {
                 name: "Andorra la Vella",
-                temperature: "-13",
+                temperature: -13,
                 condition: "Smooth"
             }, {
                 name: "Yerevan",
-                temperature: "-25",
+                temperature: -25,
                 condition: "Smooth"
             }, {
                 name: "Vienna",
-                temperature: "-3",
+                temperature: -3,
                 condition: "Smooth"
             }, {
                 name: "Baku",
-                temperature: "-18",
+                temperature: -18,
                 condition: "Smooth"
             }, {
                 name: "Minsk",
-                temperature: "-14",
+                temperature: -14,
                 condition: "Smooth"
             }]
         }

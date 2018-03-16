@@ -2,12 +2,12 @@
     <div class="content-table">
         <table>
             <tr>
-                <th><a href="">Visited</a></th>
-                <th><a href="">Temperature</a></th>
+                <th><a href="" ng-click="sortType = 'name'; sortReverse = !sortReverse">Visited</a></th>
+                <th><a href="" ng-click="sortType = 'temperature'; sortReverse =!sortReverse">Temperature</a></th>
                 <th><a href="">Weather condition</a></th>
                 <th>Add/Delete place</th>
             </tr>
-            <tr ng-repeat="btn in tableWeatherContainer">
+            <tr ng-repeat="btn in tableWeatherContainer | orderBy : sortType : sortReverse">
                 <td>{{btn.name}}</td>
                 <td>{{btn.temperature}}</td>
                 <td>{{btn.condition}}</td>
