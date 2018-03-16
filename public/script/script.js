@@ -36,6 +36,17 @@ app.directive("contentBlock", function () {
         controller: function ($scope, $http, ngDialog) {
             $scope.sortType = "temperature";
             $scope.sortReverse = false;
+            $scope.sortTypeFunc = function () {
+                $scope.sortType = "temperature";
+                $scope.sortReverse = !$scope.sortReverse
+            }
+            
+            $scope.addDeleteModal = function () {
+                ngDialog.open({
+                    template: '/template/modal/addDelete.html',
+                    className: 'ngdialog-theme-default'
+                });
+            };
 
             $scope.tableWeatherContainer = [{
                 name: "Tirana",

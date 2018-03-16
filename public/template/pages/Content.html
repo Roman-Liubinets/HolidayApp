@@ -3,7 +3,7 @@
         <table>
             <tr>
                 <th><a href="" ng-click="sortType = 'name'; sortReverse = !sortReverse">Visited</a></th>
-                <th><a href="" ng-click="sortType = 'temperature'; sortReverse =!sortReverse">Temperature</a></th>
+                <th><a href="" ng-click="sortTypeFunc()">Temperature</a></th>
                 <th><a href="">Weather condition</a></th>
                 <th>Add/Delete place</th>
             </tr>
@@ -11,7 +11,7 @@
                 <td>{{btn.name}}</td>
                 <td>{{btn.temperature}}</td>
                 <td>{{btn.condition}}</td>
-                <td><input type="button" value="..."></td>
+                <td><input type="button" value="..." ng-click="addDeleteModal()"></td>
             </tr>
         </table>
     </div>
