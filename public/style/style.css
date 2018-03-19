@@ -228,3 +228,11 @@ body {
 .content-table tr:last-child {
     background-color: blue;
 }
+
+.contentNavigation {
+    margin-bottom: 10px;
+}
+
+.contentNavigation input {
+    width: 85px;
+}

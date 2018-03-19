@@ -1,5 +1,8 @@
 <div class="content-block">
-    <div class="content-table">
+    <div class="contentNavigation">
+        <input type="button" value="Add City">
+    </div>
+       <div class="content-table">
         <table>
             <tr>
                 <th><a href="" ng-click="sortType = 'name'; sortReverse = !sortReverse">Visited</a></th>
@@ -9,7 +12,7 @@
             </tr>
             <tr ng-repeat="btn in tableWeatherContainer | orderBy : sortType : sortReverse">
                 <td>{{name}}</td>
-                <td>{{temperature}}</td>
+                <td>{{cTemperature}}</td>
                 <td>{{description}}</td>
                 <td><input type="button" value="..." ng-click="addDeleteModal()"></td>
             </tr>

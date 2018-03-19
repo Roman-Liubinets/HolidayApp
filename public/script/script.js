@@ -12,6 +12,7 @@ app.controller("myCtrl", function ($scope, $http, ngDialog) {
         $http.get(openWeatherURL).then(function successCallback(response) {
             $scope.description = response.data.weather[0].description;
             $scope.temperature = response.data.main.temp;
+            $scope.cTemperature = ($scope.temperature-273).toFixed(1) + " (C)";
             $scope.name = response.data.name;
         })
     })
