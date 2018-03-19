@@ -8,9 +8,9 @@
                 <th>Add/Delete place</th>
             </tr>
             <tr ng-repeat="btn in tableWeatherContainer | orderBy : sortType : sortReverse">
-                <td>{{btn.name}}</td>
-                <td>{{btn.temperature}}</td>
-                <td>{{btn.condition}}</td>
+                <td>{{name}}</td>
+                <td>{{temperature}}</td>
+                <td>{{description}}</td>
                 <td><input type="button" value="..." ng-click="addDeleteModal()"></td>
             </tr>
         </table>

@@ -10,7 +10,9 @@ app.controller("myCtrl", function ($scope, $http, ngDialog) {
         var openWeatherURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + $scope.lat + "&lon=" + $scope.lon + "&appid=" + apiKey;
 
         $http.get(openWeatherURL).then(function successCallback(response) {
-            console.log(openWeatherURL);
+            $scope.description = response.data.weather[0].description;
+            $scope.temperature = response.data.main.temp;
+            $scope.name = response.data.name;
         })
     })
 })
@@ -61,31 +63,31 @@ app.directive("contentBlock", function () {
                 });
             };
 
-            //            $scope.tableWeatherContainer = [{
-            //                name: "Tirana",
-            //                temperature: -23,
-            //                condition: "Smooth"
-            //            }, {
-            //                name: "Andorra la Vella",
-            //                temperature: -13,
-            //                condition: "Smooth"
-            //            }, {
-            //                name: "Yerevan",
-            //                temperature: -25,
-            //                condition: "Smooth"
-            //            }, {
-            //                name: "Vienna",
-            //                temperature: -3,
-            //                condition: "Smooth"
-            //            }, {
-            //                name: "Baku",
-            //                temperature: -18,
-            //                condition: "Smooth"
-            //            }, {
-            //                name: "Minsk",
-            //                temperature: -14,
-            //                condition: "Smooth"
-            //            }];
+            $scope.tableWeatherContainer = [{
+                name: "Tirana",
+                temperature: -23,
+                condition: "Smooth"
+                        }, {
+                name: "Andorra la Vella",
+                temperature: -13,
+                condition: "Smooth"
+                        }, {
+                name: "Yerevan",
+                temperature: -25,
+                condition: "Smooth"
+                        }, {
+                name: "Vienna",
+                temperature: -3,
+                condition: "Smooth"
+                        }, {
+                name: "Baku",
+                temperature: -18,
+                condition: "Smooth"
+                        }, {
+                name: "Minsk",
+                temperature: -14,
+                condition: "Smooth"
+                        }];
         }
     }
 });
