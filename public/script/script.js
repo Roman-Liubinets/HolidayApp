@@ -57,9 +57,16 @@ app.directive("contentBlock", function () {
                 $scope.sortReverse = !$scope.sortReverse
             }
 
-            $scope.addDeleteModal = function () {
+            $scope.favWantDeleteM = function () {
                 ngDialog.open({
                     template: '/template/modal/addDelete.html',
+                    className: 'ngdialog-theme-default'
+                });
+            };
+            
+            $scope.addCityM = function () {
+                ngDialog.open({
+                    template: '/template/modal/addCity.html',
                     className: 'ngdialog-theme-default'
                 });
             };

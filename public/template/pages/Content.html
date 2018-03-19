@@ -1,6 +1,6 @@
 <div class="content-block">
     <div class="contentNavigation">
-        <input type="button" value="Add City">
+        <input type="button" value="Add City" ng-click="addCityM()">
     </div>
        <div class="content-table">
         <table>
@@ -14,7 +14,7 @@
                 <td>{{name}}</td>
                 <td>{{cTemperature}}</td>
                 <td>{{description}}</td>
-                <td><input type="button" value="..." ng-click="addDeleteModal()"></td>
+                <td><input type="button" value="..." ng-click="favWantDeleteM()"></td>
             </tr>
         </table>
     </div>
