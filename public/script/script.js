@@ -2,19 +2,31 @@ const app = angular.module('app', ['ngDialog']);
 
 //Котроллер
 app.controller("myCtrl", function ($scope, $http, ngDialog) {
-    $.getJSON("http://ip-api.com/json", function (data) {
-        $scope.lat = data.lat;
-        $scope.lon = data.lon;
 
-        var apiKey = "16a25fce51ef72cc8689b48403d1563a";
-        var openWeatherURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + $scope.lat + "&lon=" + $scope.lon + "&appid=" + apiKey;
+    $scope.city = [];
 
-        $http.get(openWeatherURL).then(function successCallback(response) {
-            $scope.description = response.data.weather[0].description;
-            $scope.temperature = response.data.main.temp;
-            $scope.cTemperature = ($scope.temperature-273).toFixed(1) + " (C)";
-            $scope.name = response.data.name;
-        })
+    $http.get('http://localhost:8000/names')
+        .then(function successCallback(response) {
+            $scope.city = response.data;
+        }, function errorCallback(response) {
+            console.log("Error!!!" + response.err);
+        });
+
+
+        $scope.cityNameHtml = "Lviv";
+    
+        $scope.cityObj2 = ["Lviv", "Lviv", "Baku", "Minsk"];
+        
+        $scope.cityNameHtml = $scope.cityObj2;
+
+    var apiKey = "16a25fce51ef72cc8689b48403d1563a";
+    var openWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + $scope.cityNameHtml + "&appid=" + apiKey;
+
+    $http.get(openWeatherURL).then(function successCallback(response) {
+        $scope.description = response.data.weather[0].description;
+        $scope.temperature = response.data.main.temp;
+        $scope.cTemperature = ($scope.temperature - 273).toFixed(1) + " (C)";
+        $scope.name = response.data.name;
     })
 })
 
@@ -63,11 +75,37 @@ app.directive("contentBlock", function () {
                     className: 'ngdialog-theme-default'
                 });
             };
-            
+
             $scope.addCityM = function () {
                 ngDialog.open({
                     template: '/template/modal/addCity.html',
-                    className: 'ngdialog-theme-default'
+                    className: 'ngdialog-theme-default',
+                    scope: $scope,
+                    controller: function ($scope) {
+
+                        $scope.city = [];
+
+                        $scope.addNewCity = function () {
+                            let cityObj = {
+                                cityNames: $scope.cityNameHtml
+                            };
+
+
+                            $http.post('http://localhost:8000/cityName-add', cityObj)
+                                .then(function successCallback(response) {
+                                    $http.get('http://localhost:8000/names')
+                                        .then(function successCallback(response) {
+                                            $scope.city = response.data;
+                                        }, function errorCallback(response) {
+                                            console.log("Error!!!" + response.err);
+                                        });
+
+
+                                }, function errorCallback(response) {
+                                    console.log("Error!!!" + response.err);
+                                });
+                        };
+                    }
                 });
             };
 
